@@ -1,4 +1,3 @@
-
 import React, { useRef, memo, useState, useEffect } from 'react'
 import { OrbitControls, useGLTF } from '@react-three/drei'
 import { Canvas, useFrame } from '@react-three/fiber'
@@ -10,16 +9,13 @@ function Scene(props) {
 
     const ref = useRef()
 
-
     useFrame(() => {
         ref.current.rotation.y -= 0.001
         ref.current.rotation.z -= 0.001
     })
 
-
-
     return (
-        <group {...props} dispose={null} ref={ref}>
+        <group {...props} dispose={null} ref={ref} scale={[0.9, 0.9, 0.9]}>
             <mesh
                 castShadow
                 receiveShadow
